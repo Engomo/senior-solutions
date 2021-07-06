@@ -1,12 +1,13 @@
 package locationsspringsolution;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service
+
 public class LocationService {
 
     private List<Location> locations = Arrays.asList(
