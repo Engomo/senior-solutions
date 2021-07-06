@@ -12,11 +12,11 @@ import java.util.List;
 @Controller
 public class LocationsController {
 
-private List<Location> locations = Arrays.asList(new Location(1L,"Soltvadkert", 43.2, 18.5), new Location(2L,"Kiskőrös", 42.3,17.5));
+    private List<Location> locations = Arrays.asList(new Location(1L,"Soltvadkert", 43.2, 18.5), new Location(2L,"Kiskőrös", 42.3,17.5));
 
-@GetMapping("/")
-@ResponseBody
-public String getLocations() {
-   return locations.toString() + LocalDateTime.now();
-}
+    @GetMapping("/")
+    @ResponseBody
+    public String getLocations() {
+        return locations.toString() + LocalDateTime.now();
+    }
 }
