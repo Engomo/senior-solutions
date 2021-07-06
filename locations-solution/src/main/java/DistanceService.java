@@ -1,5 +1,3 @@
-package locations;
-
 import java.util.Optional;
 
 public class DistanceService {

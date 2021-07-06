@@ -1,5 +1,4 @@
-package locations;
-
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -47,7 +46,7 @@ class LocationServiceTest {
 
         List<Location> locations = ls.readLocationFromCsv(file);
 
-        assertThat(locations).extracting(Location :: getName, Location :: getLat, Location::getLon)
+        Assertions.assertThat(locations).extracting(Location:: getName, Location:: getLat, Location::getLon)
                 .contains(tuple("Kingston",17.9983495526,-76.8044524654))
                 .hasSize(9);
     }

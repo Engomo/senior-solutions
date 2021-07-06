@@ -1,5 +1,3 @@
-package locations;
-
 public class LocationParser {
 
     public Location parse(String text){
@@ -8,16 +6,10 @@ public class LocationParser {
     }
 
     public boolean isOnEquator(Location location){
-        if(location.getLat() == 0) {
-            return true;
-        }
-        return false;
+        return location.getLat() == 0;
     }
 
     public boolean isOnPrimeMeridian(Location location){
-        if(location.getLon() == 0) {
-            return true;
-        }
-        return false;
+        return location.getLon() == 0;
     }
 }

@@ -1,5 +1,3 @@
-package locations;
-
 public class Location {
     private String name;
     private double lat;
