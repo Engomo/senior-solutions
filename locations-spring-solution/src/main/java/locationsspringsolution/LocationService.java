@@ -9,6 +9,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class LocationService {
@@ -30,9 +32,20 @@ public class LocationService {
         this.modelMapper = modelMapper;
     }
 
-    public List<LocationDto> getLocations() {
+    public List<LocationDto> getLocations(Optional<String> name) {
         Type targetListType = new TypeToken<List<LocationDto>>(){}.getType();
-        return modelMapper.map(locations, targetListType);
+        List<Location> filtered = locations.stream()
+                .filter(l ->  name.isEmpty() || l.getName().equals(name.get()))
+                .collect(Collectors.toList());
+        return modelMapper.map(filtered, targetListType);
+    }
+
+    public LocationDto getLocationById(Long id) {
+       Location result = locations.stream()
+                .filter(l -> id.longValue() == l.getId())
+                .findFirst().get();
+
+       return modelMapper.map(result, LocationDto.class);
     }
 }
 

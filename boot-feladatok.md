@@ -16,7 +16,7 @@ Kérlek jelöld be, hogy melyik gyakorlati feladatokat oldottad meg!
 * [x] Docker Layers
 * [x] Feltöltés GIT repository-ba
 * [x] REST webszolgáltatások - GET művelet
-* [ ] GET műveletek paraméterezése
+* [x] GET műveletek paraméterezése
 * [ ] REST webszolgáltatások POST és DELETE művelet
 * [ ] Státuszkódok és hibakezelés
 * [ ] Integrációs tesztelés
