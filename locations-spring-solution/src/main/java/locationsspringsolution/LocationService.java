@@ -1,14 +1,19 @@
 package locationsspringsolution;
 
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class LocationService {
+
+    private ModelMapper modelMapper;
 
     private List<Location> locations = Arrays.asList(
             (new Location(1L, "Jeruzsálem", 31.7506409234, 35.2148487102)),
@@ -21,8 +26,13 @@ public class LocationService {
             (new Location(8L, "Kingston", 17.9983495526, -76.8044524654)),
             (new Location(9L, "Puerto Montt", -41.5100063557, -72.9552739634)));
 
-    public List<Location> getLocations() {
-        return locations;
+    public LocationService(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
+    }
+
+    public List<LocationDto> getLocations() {
+        Type targetListType = new TypeToken<List<LocationDto>>(){}.getType();
+        return modelMapper.map(locations, targetListType);
     }
 }
 

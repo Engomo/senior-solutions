@@ -19,7 +19,7 @@ public class LocationController {
     }
 
     @GetMapping("/locations")
-    public String getLocations() {
-        return service.getLocations().toString() + LocalDateTime.now();
+    public List<LocationDto> getLocations() {
+        return service.getLocations();
     }
 }
