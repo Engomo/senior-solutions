@@ -10,9 +10,9 @@ Kérlek jelöld be, hogy melyik gyakorlati feladatokat oldottad meg!
 * [ ] Build és futtatás Gradle használatával
 * [x] Unit és integrációs tesztek
 * [ ] Developer Tools
-* [ ] Twelve Factor App
-* [ ] Bevezetés a Docker használatába
-* [ ] Java alkalmazások Dockerrel
+* [x] Twelve Factor App
+* [x] Bevezetés a Docker használatába
+* [x] Java alkalmazások Dockerrel
 * [ ] Docker Layers
 * [ ] Feltöltés GIT repository-ba
 * [ ] REST webszolgáltatások - GET művelet
