@@ -1,0 +1,32 @@
+PUT http://localhost:8080/locations/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Késő Van",
+  "lat": 55.654654,
+  "lon": 55.654654654
+}
+
+###
+GET http://localhost:8080/locations/10
+Accept: application/json
+
+###
+
+GET http://localhost:8080/locations
+Accept: application/json
+
+###
+POST http://localhost:8080/locations
+Content-Type: application/json
+Accept:  application/json
+
+{
+  "name": "Bécs",
+  "lat": 48.210033,
+  "lon": 16.363449
+}
+
+###
+DELETE http://localhost:8080/locations/1

@@ -6,10 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 @Service
@@ -17,16 +15,18 @@ public class LocationService {
 
     private ModelMapper modelMapper;
 
-    private List<Location> locations = Arrays.asList(
-            (new Location(1L, "Jeruzsálem", 31.7506409234, 35.2148487102)),
-            (new Location(2L, "Oslo", 59.9100592208, 10.7586357184)),
-            (new Location(3L, "KraulShavn", 74.1114253082, -57.0599867781)),
-            (new Location(4L, "On Equator", 0, -57.0599867781)),
-            (new Location(5L, "Sydney", -34.0413086234, 151.3396651641)),
-            (new Location(6L, "Kugluktuk", 67.8029654876, -115.0916122714)),
-            (new Location(7L, "On Equator1", 0, -115.0916122714)),
-            (new Location(8L, "Kingston", 17.9983495526, -76.8044524654)),
-            (new Location(9L, "Puerto Montt", -41.5100063557, -72.9552739634)));
+    private AtomicLong idGenerator = new AtomicLong();
+
+    private List<Location> locations = Collections.synchronizedList(new ArrayList<>(List.of(
+            (new Location(idGenerator.incrementAndGet(), "Jeruzsálem", 31.7506409234, 35.2148487102)),
+            (new Location(idGenerator.incrementAndGet(), "Oslo", 59.9100592208, 10.7586357184)),
+            (new Location(idGenerator.incrementAndGet(), "KraulShavn", 74.1114253082, -57.0599867781)),
+            (new Location(idGenerator.incrementAndGet(), "On Equator", 0, -57.0599867781)),
+            (new Location(idGenerator.incrementAndGet(), "Sydney", -34.0413086234, 151.3396651641)),
+            (new Location(idGenerator.incrementAndGet(), "Kugluktuk", 67.8029654876, -115.0916122714)),
+            (new Location(idGenerator.incrementAndGet(), "On Equator1", 0, -115.0916122714)),
+            (new Location(idGenerator.incrementAndGet(), "Kingston", 17.9983495526, -76.8044524654)),
+            (new Location(idGenerator.incrementAndGet(), "Puerto Montt", -41.5100063557, -72.9552739634)))));
 
     public LocationService(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
@@ -40,12 +40,37 @@ public class LocationService {
         return modelMapper.map(filtered, targetListType);
     }
 
-    public LocationDto getLocationById(Long id) {
+    public LocationDto getLocationById(long id) {
        Location result = locations.stream()
-                .filter(l -> id.longValue() == l.getId())
+                .filter(l -> l.getId() == id)
                 .findFirst().get();
 
        return modelMapper.map(result, LocationDto.class);
+    }
+
+    public LocationDto createLocation(CreateLocationCommand command) {
+        Location location = new Location(idGenerator.incrementAndGet(), command.getName(), command.getLat(), command.getLon());
+        locations.add(location);
+        return modelMapper.map(location, LocationDto.class);
+    }
+
+    public LocationDto updateLocation(long id, UpdateLocationCommand command) {
+        Location location = locations.stream()
+                .filter(l -> l.getId() == id)
+                .findFirst().orElseThrow(()-> new IllegalArgumentException(("Location not found : " + id)));
+
+        location.setName(command.getName());
+        location.setLat(command.getLat());
+        location.setLon(command.getLon());
+
+        return modelMapper.map(location, LocationDto.class);
+    }
+
+    public void deleteLocation(long id) {
+       Location location = locations.stream()
+                .filter(l -> l.getId() == id)
+                .findFirst().orElseThrow(()-> new IllegalArgumentException(("Location not found : " + id)));
+        locations.remove(location);
     }
 }
 
