@@ -1,3 +1,243 @@
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+<> 2021-07-15T095921.404.json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/locations/1
+
+###
+
+POST http://localhost:8080/locations
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Bécs",
+  "lat": 48.210033,
+  "lon": 16.363449
+}
+
+<> 2021-07-15T094110.201.json
+
+###
+
+POST http://localhost:8080/locations
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Bécs",
+  "lat": 48.210033,
+  "lon": 16.363449
+}
+
+<> 2021-07-15T094041.201.json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+<> 2021-07-15T090817.500.json
+
+###
+
+GET http://localhost:8080/locations/1
+Accept: application/json
+
+<> 2021-07-15T090803.200.json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+<> 2021-07-15T084800.500.json
+
+###
+
+GET http://localhost:8080/locations/5
+Accept: application/json
+
+<> 2021-07-15T084755.200.json
+
+###
+
+GET http://localhost:8080/locations/1
+Accept: application/json
+
+<> 2021-07-15T084748.500.json
+
+###
+
+DELETE http://localhost:8080/locations/1
+
+###
+
+GET http://localhost:8080/locations/13
+Accept: application/json
+
+<> 2021-07-15T084711.500.json
+
+###
+
+GET http://localhost:8080/locations/13
+Accept: application/json
+
+<> 2021-07-15T084101.500.json
+
+###
+
+GET http://localhost:8080/locations/13
+Accept: application/json
+
+<> 2021-07-15T083745.500.json
+
+###
+
+GET http://localhost:8080/locations/1
+Accept: application/json
+
+<> 2021-07-15T083738.200.json
+
+###
+
+GET http://localhost:8080/locations/
+Accept: application/json
+
+<> 2021-07-15T083733.200.json
+
+###
+
+GET http://localhost:8080/locations/11
+Accept: application/json
+
+<> 2021-07-15T083728.500.json
+
+###
+
+GET http://localhost:8080/locations/111
+Accept: application/json
+
+<> 2021-07-15T083719.500.json
+
+###
+
+GET http://localhost:8080/locations/111
+Accept: application/json
+
+<> 2021-07-15T083622.500.json
+
+###
+
+GET http://localhost:8080/locations/1
+Accept: application/json
+
+<> 2021-07-15T083613.200.json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+<> 2021-07-15T083600.500.json
+
+###
+
+GET http://localhost:8080/locations/15
+Accept: application/json
+
+<> 2021-07-15T083344.500.json
+
+###
+
+GET http://localhost:8080/locations/8
+Accept: application/json
+
+<> 2021-07-15T083338.200.json
+
+###
+
+GET http://localhost:8080/locations/555
+Accept: application/json
+
+<> 2021-07-15T083321.500.json
+
+###
+
+GET http://localhost:8080/locations/555
+Accept: application/json
+
+<> 2021-07-15T083318.500.json
+
+###
+
+GET http://localhost:8080/locations/555
+Accept: application/json
+
+<> 2021-07-15T083136.500.json
+
+###
+
+GET http://localhost:8080/locations/7
+Accept: application/json
+
+<> 2021-07-15T083130.200.json
+
+###
+
+GET http://localhost:8080/locations/7
+Accept: application/json
+
+<> 2021-07-15T082750.200.json
+
+###
+
+PUT http://localhost:8080/locations/8
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Késő Van",
+  "lat": 55.654654,
+  "lon": 55.654654654
+}
+
+<> 2021-07-15T082727.200.json
+
+###
+
+PUT http://localhost:8080/locations/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Késő Van",
+  "lat": 55.654654,
+  "lon": 55.654654654
+}
+
+<> 2021-07-15T082710.500.json
+
+###
+
 GET http://localhost:8080/locations
 Accept: application/json
 
@@ -167,354 +407,6 @@ GET http://localhost:8080/locations/3
 Accept: application/json
 
 <> 2021-07-14T231508.200.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name":"Bécs",
-  "lat":48.210033,
-  "lon":16.363449
-}
-
-<> 2021-07-14T231401.500.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name": "Bécs",
-  "lat": 48.210033,
-  "lon": 16.363449
-}
-
-<> 2021-07-14T231349.500.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T231131.500.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T231125.500.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T231106.405.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T231044.500.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230900.500.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230826.500.json
-
-###
-
-GET http://localhost:8080/locations/3
-Accept: application/json
-
-<> 2021-07-14T230744.200.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230736.500.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230732.500.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230500.405.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Becs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230448.405.json
-
-###
-
-POST http://localhost:8080/locations/create
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230426.405.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230259.500.json
-
-###
-
-GET http://localhost:8080/locations/3
-Accept: application/json
-
-<> 2021-07-14T230254.200.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T230243.200.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230240.500.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230235.500.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T230139.500.json
-
-###
-
-GET http://localhost:8080/locations
-Accept: application/json
-
-<> 2021-07-14T230136.200.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T230134.200.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T230130.200.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T230049.400.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T230046.400.json
-
-###
-
-POST http://localhost:8080/locations
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name" : "Bécs",
-  "lat" : 48.210033,
-  "lon" : 16.363449
-}
-
-<> 2021-07-14T225944.500.json
-
-###
-
-GET http://localhost:8080/locations
-Accept: application/json
-
-<> 2021-07-14T225935.200.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T225932.400.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T225812.400.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T225808.400.json
-
-###
-
-GET http://localhost:8080/locations/8
-Accept: application/json
-
-<> 2021-07-14T225727.400.json
 
 ###
 
