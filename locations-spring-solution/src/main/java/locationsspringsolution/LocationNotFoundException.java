@@ -1,14 +1,14 @@
 package locationsspringsolution;
 
-public class LocationNotFoundException extends RuntimeException{
-    public LocationNotFoundException() {
+import org.zalando.problem.AbstractThrowableProblem;
+import org.zalando.problem.Status;
+
+import java.net.URI;
+
+public class LocationNotFoundException extends AbstractThrowableProblem {
+    public LocationNotFoundException(long id) {
+        super(URI.create("locations/location-not-found"), "Not found!", Status.NOT_FOUND, String.format("Location with id %d not found", id));
     }
 
-    public LocationNotFoundException(String message) {
-        super(message);
-    }
 
-    public LocationNotFoundException(String message, Throwable cause) {
-        super(message, cause);
-    }
 }

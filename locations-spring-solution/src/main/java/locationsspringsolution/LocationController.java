@@ -32,12 +32,7 @@ public class LocationController {
 
     @GetMapping("/{id}")
     public ResponseEntity getLocationById(@PathVariable("id") long id) {
-        try {
             return ResponseEntity.ok(service.getLocationById(id));
-        }
-        catch (IllegalArgumentException iae) {
-            return ResponseEntity.notFound().build();
-        }
     }
 
     @PostMapping
@@ -57,19 +52,4 @@ public class LocationController {
         service.deleteLocation(id);
     }
 
-    @ExceptionHandler(LocationNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<Problem> locationNotFound(LocationNotFoundException lne) {
-        Problem problem =
-                Problem.builder()
-                .withType(URI.create("locations/not-found"))
-                .withTitle("Not found!")
-                .withStatus(Status.NOT_FOUND)
-                .withDetail(lne.getMessage())
-                .build();
-        return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
-                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
-                .body(problem);
-    }
 }
