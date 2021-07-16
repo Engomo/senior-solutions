@@ -72,5 +72,9 @@ public class LocationService {
                 .findFirst().orElseThrow(()-> new LocationNotFoundException((id)));
         locations.remove(location);
     }
+
+    public void deleteAllLocations() {
+        locations.clear();
+    }
 }
 
