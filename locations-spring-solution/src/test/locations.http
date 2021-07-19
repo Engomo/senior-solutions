@@ -38,7 +38,7 @@ Content-Type: application/json
 Accept:  application/json
 
 {
-  "name": "",
+  "name": "Bécs",
   "lat": 48.210033,
-  "lon": 16.363449
+  "lon": 1666.363449
 }

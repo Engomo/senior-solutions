@@ -3,6 +3,20 @@ Content-Type: application/json
 Accept: application/json
 
 {
+  "name": "Bécs",
+  "lat": 48.210033,
+  "lon": 1666.363449
+}
+
+<> 2021-07-19T125510.400.json
+
+###
+
+POST http://localhost:8080/locations
+Content-Type: application/json
+Accept: application/json
+
+{
   "name": "",
   "lat": 48.210033,
   "lon": 16.363449
@@ -335,13 +349,6 @@ GET http://localhost:8080/locations/8
 Accept: application/json
 
 <> 2021-07-15T083338.200.json
-
-###
-
-GET http://localhost:8080/locations/555
-Accept: application/json
-
-<> 2021-07-15T083321.500.json
 
 ###
 

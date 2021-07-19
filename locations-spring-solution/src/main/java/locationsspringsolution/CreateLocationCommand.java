@@ -17,7 +17,8 @@ public class CreateLocationCommand {
     @Min(-90)
     @Max(90)
     private double lat;
-    @Min(-180)
-    @Max(180)
+//    @Min(-180)
+//    @Max(180)
+    @Coordinate(type = Type.LON)
     private double lon;
 }

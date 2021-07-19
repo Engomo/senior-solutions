@@ -1,0 +1,11 @@
+{
+  "type": "https://zalando.github.io/problem/constraint-violation",
+  "status": 400,
+  "violations": [
+    {
+      "field": "lon",
+      "message": "kisebbnek, vagy egyenlÅnek kell lennie, mint 180"
+    }
+  ],
+  "title": "Constraint Violation"
+}
