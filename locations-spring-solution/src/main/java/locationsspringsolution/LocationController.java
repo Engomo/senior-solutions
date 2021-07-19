@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.zalando.problem.Problem;
 import org.zalando.problem.Status;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -37,12 +38,12 @@ public class LocationController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public LocationDto createLocation(@RequestBody CreateLocationCommand command) {
+    public LocationDto createLocation(@Valid @RequestBody CreateLocationCommand command) {
         return service.createLocation(command);
     }
 
     @PutMapping("/{id}")
-    public LocationDto updateLocation(@PathVariable("id") long id,@RequestBody UpdateLocationCommand command) {
+    public LocationDto updateLocation(@PathVariable("id") long id,@Valid @RequestBody UpdateLocationCommand command) {
         return service.updateLocation(id, command);
     }
 
