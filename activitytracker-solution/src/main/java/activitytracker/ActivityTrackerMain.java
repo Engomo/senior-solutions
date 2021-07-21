@@ -45,9 +45,9 @@ public class ActivityTrackerMain {
     private static void insert(EntityManager em) {
         em.getTransaction().begin();
 
-        em.persist(new Activity(LocalDateTime.of(2021, 01, 21,11,02,35), "Biciklizés az Alföldön", ActivityType.BIKING));
-        em.persist(new Activity(LocalDateTime.of(2021, 05, 21,11,02,35), "Futás az Alföldön", ActivityType.RUNNING));
-        em.persist(new Activity(LocalDateTime.of(2021, 07, 21,11,02,35), "Kosárlabdázás a pályán", ActivityType.BASKETBALL));
+        em.persist(new Activity(LocalDateTime.of(2021, 1, 21,11,02,35), "Biciklizés az Alföldön", ActivityType.BIKING));
+        em.persist(new Activity(LocalDateTime.of(2021, 5, 21,11,02,35), "Futás az Alföldön", ActivityType.RUNNING));
+        em.persist(new Activity(LocalDateTime.of(2021, 7, 21,11,02,35), "Kosárlabdázás a pályán", ActivityType.BASKETBALL));
 
         em.getTransaction().commit();
 

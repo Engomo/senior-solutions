@@ -18,9 +18,9 @@ public class ActivityDaoTest {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("pu");
         activityDao = new ActivityDao(factory);
 
-        Activity activity1 = new Activity(LocalDateTime.of(2021, 01, 21,11,02,35), "Biciklizés az Alföldön", ActivityType.BIKING);
-        Activity activity2 = new Activity(LocalDateTime.of(2021, 05, 21,11,02,35), "Futás az Alföldön", ActivityType.RUNNING);
-        Activity activity3 = new Activity(LocalDateTime.of(2021, 07, 21,11,02,35), "Kosárlabdázás a pályán", ActivityType.BASKETBALL);
+        Activity activity1 = new Activity(LocalDateTime.of(2021, 1, 21,11,02,35), "Biciklizés az Alföldön", ActivityType.BIKING);
+        Activity activity2 = new Activity(LocalDateTime.of(2021, 5, 21,11,02,35), "Futás az Alföldön", ActivityType.RUNNING);
+        Activity activity3 = new Activity(LocalDateTime.of(2021, 7, 21,11,02,35), "Kosárlabdázás a pályán", ActivityType.BASKETBALL);
 
         activityDao.saveActivity(activity1);
         activityDao.saveActivity(activity2);
