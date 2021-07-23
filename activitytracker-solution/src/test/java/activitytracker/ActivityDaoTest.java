@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -41,5 +43,20 @@ public class ActivityDaoTest {
     public void testDeleteActivity() {
         activityDao.deleteActivity(2L);
         assertEquals(2, activityDao.listActivities().size());
+    }
+
+    @Test
+    public void testUpdateActivity() {
+        activityDao.updateActivity(1L, "Biciklizés a homokban");
+        assertEquals("Biciklizés a homokban", activityDao.findActivityById(1L).getDescription());
+    }
+
+    @Test
+    public void testFindActivityByIdWithLabels() {
+        Activity activity = new Activity(LocalDateTime.of(2021, 07, 23, 15, 00), "Kosár a haverokkal", ActivityType.BASKETBALL);
+        activity.setLabels(Arrays.asList("1-1", "volt sör"));
+        activityDao.saveActivity(activity);
+
+        assertEquals(2, activityDao.findActivityByIdWithLabels(activity.getId()).getLabels().size());
     }
 }

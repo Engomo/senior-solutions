@@ -2,6 +2,7 @@ package activitytracker;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "activities")
@@ -15,12 +16,19 @@ public class Activity {
     @Column(name = "Start_Time", nullable = false)
     private LocalDateTime startTime;
 
-    @Column(name = "Description",length = 200, nullable = false)
+    @Column(name = "Description", length = 200, nullable = false)
     private String description;
 
     @Column(name = "Activity_Type", nullable = false, length = 20)
     @Enumerated(EnumType.STRING)
     private ActivityType type;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    @ElementCollection
+    private List<String> labels;
 
     public Activity() {
     }
@@ -29,6 +37,16 @@ public class Activity {
         this.startTime = startTime;
         this.description = description;
         this.type = type;
+    }
+
+    @PrePersist
+    public void setCreatedAtNow() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PostPersist
+    public void setUpdatedAtNow() {
+        this.updatedAt = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -61,6 +79,30 @@ public class Activity {
 
     public void setType(ActivityType type) {
         this.type = type;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
     }
 
     @Override
