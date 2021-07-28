@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -71,5 +72,48 @@ public class ActivityDaoTest {
         activityDao.saveActivity(activity);
 
         assertEquals(3, activityDao.findActivityByIdWithTrackPoints(activity.getId()).getTrackPoints().size());
+    }
+
+    @Test
+    void testFindTrackPointCoordinatesByDate() {
+        Activity activity1 = new Activity(LocalDateTime.of(2021,7,28,8,50), "Reggeli kosár", ActivityType.BASKETBALL);
+        activity1.addTrackPoint(new TrackPoint(LocalDate.of(2021,7,28), 15.15,15.15));
+        activity1.addTrackPoint(new TrackPoint(LocalDate.of(2021,7,28), 15.14,15.15));
+//        activity1.addTrackPoint(new TrackPoint(LocalDate.of(2021,7,28), 15.15,15.16));
+
+        activityDao.saveActivity(activity1);
+
+        Activity activity2 = new Activity(LocalDateTime.of(2020,7,28,8,50), "Reggeli kosár", ActivityType.BASKETBALL);
+        activity2.addTrackPoint(new TrackPoint(LocalDate.of(2020,7,28), 15.15,15.15));
+        activity2.addTrackPoint(new TrackPoint(LocalDate.of(2020,7,28), 15.14,15.15));
+        activity2.addTrackPoint(new TrackPoint(LocalDate.of(2020,7,28), 15.15,15.16));
+
+        activityDao.saveActivity(activity2);
+
+        List<Coordinate> coordinates = activityDao.findTrackPointCoordinatesByDate(LocalDateTime.of(2021,1,1, 12, 0), 0, 20);
+
+        assertEquals(2, coordinates.size());
+    }
+
+    @Test
+    void testFindTrackPointCountByActivity() {
+        Activity activity1 = new Activity(LocalDateTime.of(2019,7,28,8,50), "Reggeli kosár", ActivityType.BASKETBALL);
+        activity1.addTrackPoint(new TrackPoint(LocalDate.of(2021,7,28), 15.15,15.15));
+        activity1.addTrackPoint(new TrackPoint(LocalDate.of(2021,7,28), 15.14,15.15));
+//        activity1.addTrackPoint(new TrackPoint(LocalDate.of(2021,7,28), 15.15,15.16));
+
+        activityDao.saveActivity(activity1);
+
+        Activity activity2 = new Activity(LocalDateTime.of(2019,8,28,8,50), "Reggeli kosár", ActivityType.BASKETBALL);
+        activity2.addTrackPoint(new TrackPoint(LocalDate.of(2020,7,28), 15.15,15.15));
+        activity2.addTrackPoint(new TrackPoint(LocalDate.of(2020,7,28), 15.14,15.15));
+        activity2.addTrackPoint(new TrackPoint(LocalDate.of(2020,7,28), 15.15,15.16));
+
+        activityDao.saveActivity(activity2);
+
+        List<Object[]> result = activityDao.findTrackPointCountByActivity();
+
+        assertEquals(2, result.get(0)[1]);
+        assertEquals(3, result.get(1)[1]);
     }
 }

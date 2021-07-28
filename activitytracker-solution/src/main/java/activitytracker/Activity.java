@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "activities")
+@NamedQuery(name = "trackPointsAfterThisDate", query = "select a from Activity a join fetch a.trackPoints where a.startTime > :startTime")
 public class Activity {
 
     @Id
